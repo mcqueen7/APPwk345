@@ -1,19 +1,25 @@
-import 'react-native-gesture-handler';
-import React from 'react';
-import { SafeAreaProvider } from 'react-native-safe-area-context';
-import { NativeBaseProvider } from 'native-base';
-
-import Navigation from './src/navigation';
+import React from "react";
+import { StyleSheet, StatusBar, SafeAreaView } from "react-native";
+import {NativeBaseProvider} from 'native-base';
+import Header from "./src/components/Header";
+import AlbumList from "./src/components/AlbumList";
 
 const App = () => {
   return (
-    <SafeAreaProvider>
+    <SafeAreaView style={styles.container}>
       <NativeBaseProvider>
-        
-        <Navigation />
+        <StatusBar />
+        <Header />
+        <AlbumList />
       </NativeBaseProvider>
-    </SafeAreaProvider>
+    </SafeAreaView>
   );
-}
+};
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
+});
 
 export default App;

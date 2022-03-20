@@ -1,19 +1,52 @@
 import React from "react";
-import { FlatList } from "native-base";
-import AlbumDetail from "./AlbumDetail";
+import { Text, FlatList, SectionList, StyleSheet } from "react-native";
+import {NativeBaseProvider,Heading} from 'native-base';
+import BooksDetail from "./BooksDetail";
+import sections from "../json/album_section.json";
 
-const AlbumList = ({ list, navigation }) => {
-  const renderItem = ({ item }) => <AlbumDetail album={item} navigation={navigation} />;
+const Albumlist = () => {
+  const renderSectionHeader = ({section}) => (
+    <>
+      <Heading style={styles.sectionHeader}>{section.title}</Heading>
+        <FlatList
+          horizontal={true}
+          data={section.data}
+          renderItem={({ item }) => <BooksDetail album={item} />}
+          showsHorizontalScrollIndicator={false}
+          keyExtractor={ item => item.title }
+        />
+   
+    </>
+  );
+  const renderItem = ({ item, section }) => {
+    if (section.horizontal) {
+      return null;
+    }
+    return <AlbumDetail album={item} />
+  };
+
   return (
-    <FlatList
-    _dark={{ bg: "blueGray.900" }}
-    _light={{ bg: "white" }}
-      data={list}
+    <SectionList 
+      sections={sections}
+      contentContainerStyle={{ paddingHorizontal: 16 }}
+      stickySectionHeadersEnabled={false}
+      showsHorizontalScrollIndicator={false}
+      renderSectionHeader={renderSectionHeader}
       renderItem={renderItem}
-      keyExtractor={item => item.title}
-    />    
-  );  
-}
+      keyExtractor={ item => item.title }
+    />
+  );
+};
 
-export default AlbumList;
+const styles = StyleSheet.create({
+  sectionHeader: {
+    // fontWeight: '600',
+    // fontSize: 18,
+    paddingTop: 16,
+    paddingBottom: 16,
+    // paddingLeft: 20,
+    // textTransform: 'uppercase',
+  },
+})
 
+export default Albumlist;
