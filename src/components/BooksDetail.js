@@ -36,21 +36,27 @@ const BooksDetail =({ album, navigation}) => {
                 {album.star!="null"? <HStack mt="16px">
                   <Image
                     source={st[album.star[0]]} alt="123"
+                    mr="4px"
                   />
                   <Image
                     source={st[album.star[1]]} alt="123"
+                    mr="4px"
                   />
                   <Image
                     source={st[album.star[2]]} alt="123"
+                    mr="4px"
                   />
                   <Image
                     source={st[album.star[3]]} alt="123"
+                    mr="4px"
                   />
                   <Image
                     source={st[album.star[4]]} alt="123"
+                    mr="4px"
                   />
                   <Image
                     source={st[album.star[5]]} alt="123"
+                    mr="4px"
                   />
                 </HStack>:null}        
                 <Heading style={styles.headerTitleStyle}>{album.title}</Heading>

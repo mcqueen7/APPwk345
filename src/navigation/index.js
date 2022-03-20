@@ -10,6 +10,7 @@ import DetailScreen from '../screens/DetailScreen';
 
 
 import albumData from "../json/albums.json";
+import { shadowOffset } from 'react-native/Libraries/Components/View/ReactNativeStyleAttributes';
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -69,7 +70,7 @@ const MyTabs = () => {
   );
 }
 
-const HomeStack = () => {
+const HomeStack = ({navigation}) => {
   return (
     <Stack.Navigator
       // screenOptions={{
@@ -81,25 +82,67 @@ const HomeStack = () => {
         component={AlbumScreen}
         options={{
           title: "",
-          headerTitleStyle: {
-            fontWeight: '400',
-            fontSize: 20
+          headerShadowVisible:false,
+          headerStyle:{
+            elevation: 0, // remove shadow on Android
+            shadowOpacity: 0, // remove shadow on iOS
+            backgroundColor:"#fff",
+            shadowOffset:0,
+          
           },
+          headerLeft: () => (
+            <MaterialCommunityIcons
+              name={'menu'}
+              size={24}
+              onPress={() => alert("Drawer")}
+              style={{ marginLeft: 16 }}
+            />
+          ),
+          headerRight: () => (
+            <MaterialCommunityIcons
+              name={'magnify'}
+              size={24}
+              onPress={() => alert("Search")}
+              style={{ marginRight: 16 }}
+            />
+          ),
+          
         }}
       />
       <Stack.Screen
         name="Detail"
         component={DetailScreen}
         options={({ route }) => ({
-          title: route.params.title,
+          title: "",
+          headerShadowVisible:false,
           headerStyle: {
             backgroundColor: '#fff',
+
           },
           headerTintColor: '#000',
           headerTitleStyle: {
             fontWeight: '400',
             fontSize: 20
           },
+          headerLeft: () => (
+            <MaterialCommunityIcons
+              name={'chevron-left'}
+              size={30}
+              onPress={() =>navigation.goBack(null)}
+              style={{ marginLeft: 8 }}
+            />
+          ),
+          headerRight: () => (
+         <MaterialCommunityIcons
+            name={'bookmark'}
+            color={'#6200EE'}
+            size={30}
+            onPress={() =>alert("bookmark")}
+            style={{ marginLeft: 8 }}
+          />
+            
+          ),
+          backgroundColor:'#fff',
         })}
       />
     </Stack.Navigator>

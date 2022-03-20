@@ -6,28 +6,28 @@
       {
       "title": "Fashionopolis",
       "artist": "Dana Thomas",
-      "url": "https://www.amazon.com/Taylor-Swift/dp/B0014I4KH6",
+      "url": "https://stackoverflow.com/questions/50622617/react-native-ctrl-m-or-dev-tool-not-showing-in-my-emulator",
       "image": "0",
       "star":"null",
-      "price": 46.99,
+      "price": 94.87,
       "descriptions": "A spectacular visual journey through 40 years of haute couture from one of the best-known and most trend-setting brands in fashion."
       },
       {
          "title": "Chanel",
          "artist": "Patrick Mauriès",
-         "url": "https://www.amazon.com/Fearless-Enhanced-Taylor-Swift/dp/B001EYGOEM",
+         "url": "https://stackoverflow.com/questions/50622617/react-native-ctrl-m-or-dev-tool-not-showing-in-my-emulator",
          "image": "1",
          "star":"null",
-         "price": 46.99,
+         "price": 12.34,
          "descriptions": "A spectacular visual journey through 40 years of haute couture from one of the best-known and most trend-setting brands in fashion."
       },
       {
          "title": "Calligraphy",
          "artist": "June & Lucy",
-         "url": "https://www.amazon.com/Speak-Now-Taylor-Swift/dp/B003WTE886",
+         "url": "https://stackoverflow.com/questions/50622617/react-native-ctrl-m-or-dev-tool-not-showing-in-my-emulator",
          "image": "2",
          "star":"null",
-         "price": 46.99,
+         "price": 3.20,
          "descriptions": "A spectacular visual journey through 40 years of haute couture from one of the best-known and most trend-setting brands in fashion."
       } 
    ]},
@@ -38,7 +38,7 @@
          {
          "title": "Yves Saint Laurent",
          "artist": "Suzy Menkes ",
-         "url": "https://www.amazon.com/Taylor-Swift/dp/B0014I4KH6",
+         "url": "https://stackoverflow.com/questions/50622617/react-native-ctrl-m-or-dev-tool-not-showing-in-my-emulator",
          "image": "3",
          "star":["1","1","1","1","0"],
          "price": 46.99,
@@ -48,20 +48,20 @@
          {
             "title": "The Book of Signs",
             "artist": "Rudolf Koch ",
-            "url": "https://www.amazon.com/Fearless-Enhanced-Taylor-Swift/dp/B001EYGOEM",
+            "url": "https://stackoverflow.com/questions/50622617/react-native-ctrl-m-or-dev-tool-not-showing-in-my-emulator",
             "image": "4",
             "star":["1","1","1","0","0"],
-            "price": 46.99,
+            "price": 1.20,
             "descriptions": "A spectacular visual journey through 40 years of haute couture from one of the best-known and most trend-setting brands in fashion."
 
          },
          {
             "title": "Stitched Up",
             "artist": "Tansy E. Hoskins",
-            "url": "https://www.amazon.com/1989-Taylor-Swift/dp/B00MRHANNI",
+            "url": "https://stackoverflow.com/questions/50622617/react-native-ctrl-m-or-dev-tool-not-showing-in-my-emulator",
             "image": "5",
             "star":["1","1","1","0","0"],
-            "price": 46.99,
+            "price": 66.66,
             "descriptions": "A spectacular visual journey through 40 years of haute couture from one of the best-known and most trend-setting brands in fashion."
          }
    ]}
