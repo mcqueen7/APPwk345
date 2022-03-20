@@ -21,7 +21,7 @@ const BooksDetail =({ album, navigation}) => {
     // <NativeBaseProvider>
       <Box bg="white">
            <Pressable
-              onPress={() => {console.log(album);navigation.navigation.navigate('Detail',album)}}
+              onPress={() => {console.log(navigation);navigation.navigation.navigate('detail')}}
             >
               <Box>
                 <Box>

@@ -10,11 +10,6 @@ var ad=[
   require('../images/img_book_tbos.png'),
   require('../images/img_book_stitchedup.png'),
 ];
-var st=[
-  require('../images/icon_star_empty.png'),
-  require('../images/icon_star_filled.png'),
-];
-
 const DetailScreen = ({ route }) => {
   const { title, 
     artist,
@@ -24,13 +19,12 @@ const DetailScreen = ({ route }) => {
     description
   } = route.params;
   return (
-    <Center bg="white">
+    <Center>
       <ScrollView>
-        <AspectRatio width={210} height={300}  ratio={{
-  }}>
+        <AspectRatio w="100%" ratio={16 / 9}>
           <Image
             source={ad[image]}
-            alt='bookImage'
+            alt='albumImage'
           />
         </AspectRatio>
         <Box bg="#fff" padding="2" margin="2">
@@ -38,19 +32,24 @@ const DetailScreen = ({ route }) => {
             <Heading pt={1} fontSize="2xl" color='#6099E4'>Discount Now!</Heading>
             <Heading fontSize="4xl">Price: ${price}</Heading>
           </Center>
-          
-        </Box>
-        <Box bg="#fff" padding="2" margin="2">
-            <Text>{title}</Text>
-            <Text>{artist}</Text>
-            <Text mt='15' bold>Descriptions:</Text>
-            <Text>{'\t'}{description}</Text>
-            <Button 
+          <Button 
             mt="4"
             onPress={() => Linking.openURL(url)}
           >
-            Buy Now for ${price}
-          </Button>  
+            Buy Now !
+          </Button>   
+        </Box>
+        <Box bg="#fff" padding="2" margin="2">
+            <Text>
+              <Text bold>Artist: </Text>
+              {artist}
+            </Text>
+            <Text>            
+              <Text bold>Title: </Text>
+              {title}
+            </Text>
+            <Text mt='15' bold>Descriptions:</Text>
+            <Text>{'\t'}{description}</Text>
         </Box>
       </ScrollView>      
     </Center>

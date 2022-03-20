@@ -4,22 +4,6 @@ import {NativeBaseProvider,Heading} from 'native-base';
 import BooksDetail from "./BooksDetail";
 import sections from "../json/album_section.json";
 
-
-
-// import AlbumDetail from "./AlbumDetail";
-
-// const Albumlist = ({ list, navigation }) => {
-//   const renderItem = ({ item }) => <AlbumDetail album={item} navigation={navigation} />;
-//   return (
-//     <FlatList
-//       data={list}
-//       renderItem={renderItem}
-//       keyExtractor={item => item.title}
-//     />    
-//   );  
-// }
-
-
 const Albumlist = (navigation) => {
   const renderSectionHeader = ({section}) => (
     <>
