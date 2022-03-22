@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from "react";
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
@@ -11,6 +11,7 @@ import DetailScreen from '../screens/DetailScreen';
 
 import albumData from "../json/albums.json";
 import { shadowOffset } from 'react-native/Libraries/Components/View/ReactNativeStyleAttributes';
+import Pressable from "react-native/Libraries/Components/Pressable/Pressable";
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -71,6 +72,11 @@ const MyTabs = () => {
 }
 
 const HomeStack = ({navigation}) => {
+  const [toggle, setToggle] = useState(true);
+  const toggleFunction = () => {
+      setToggle(!toggle);
+  };
+
   return (
     <Stack.Navigator
       // screenOptions={{
@@ -133,14 +139,12 @@ const HomeStack = ({navigation}) => {
             />
           ),
           headerRight: () => (
-         <MaterialCommunityIcons
-            name={'bookmark'}
-            color={'#6200EE'}
-            size={30}
-            onPress={() =>alert("bookmark")}
-            style={{ marginLeft: 8 }}
-          />
+            <Pressable onPress={() => toggleFunction()}>
+            {toggle ? <MaterialCommunityIcons name={'bookmark-outline'} color={'black'} size={26} />:
+                            <MaterialCommunityIcons name={'bookmark'} color={'#6200EE'} size={26} />}
             
+        </Pressable>
+
           ),
           backgroundColor:'#fff',
         })}
